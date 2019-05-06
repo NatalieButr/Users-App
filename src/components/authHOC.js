@@ -35,6 +35,7 @@ noName() {
                 You enter wrong email or password
 				<br />
                 <Link className='btn btn-danger' to='/login/'>try again?</Link>
+                <Link className='btn btn-info' to='/register/'>sign up</Link>
             </div>
         }
 

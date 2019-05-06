@@ -31,6 +31,7 @@ render() {
                     placeholder="Email"
                     value={email}
                     onChange={this.handleChange}
+                    required
                 />
                 <input
                     type="text"
@@ -39,6 +40,7 @@ render() {
                     placeholder="Password"
                     value={password}
                     onChange={this.handleChange}
+                    required
                 />
                 <button type="submit" className="btn btn-success">Войти</button>
             </form>
