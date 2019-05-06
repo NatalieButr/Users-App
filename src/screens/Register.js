@@ -65,7 +65,8 @@ handleConfirmPassword = (event) => {
         return (
             <React.Fragment>
             <span>Email занят</span>
-            <Link to='/register' className='btn btn-danger'> TRY AGAIN </Link>
+            <Link to='/login' className='btn btn-danger'> TRY AGAIN </Link>
+            <Link to='/' className='btn btn-danger'> To homepage </Link>
             </React.Fragment>
         )
     }
