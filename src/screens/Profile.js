@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 import authHOC from '../components/authHOC';
 
 class Profile extends Component {
@@ -22,10 +24,10 @@ componentDidMount() {
         axios(apiUrl)
         .then(response => {
             let users = response.data;
-            console.log(users)
+            if(users !== undefined){
             let user = users.filter((u) => u.email === this.props.params.email)[0];
             this.setState({ id: user.id, load: true, username: user.username, surname: user.surname, phone: user.phone, adress: user.adress, email: user.email, password: user.password});
-         });
+         }});
     }
 handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,7 +55,15 @@ saveChanges = (e) => {
 }
  
 render() {
-        const { edit, load, username, surname, adress, phone } = this.state;
+        const { edit, load, username, surname, adress, phone, email,id,password } = this.state;
+        if (username ===undefined || surname === undefined || adress === undefined || email === undefined)
+        {
+            return (
+                <div>
+                    <Link to='/' className='btn btn-block'>You need auth</Link>
+               </div>
+            )
+        }
         if (load === false)  {
             return (
                 <div>

@@ -28,7 +28,7 @@ export default (ChildComponent) => {
                 } else {
                     return false
                 }    
-    }   
+    } 
     }
 noName() {
             return <div className="noname-wrap">
