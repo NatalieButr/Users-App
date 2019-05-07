@@ -8,7 +8,7 @@ class Profile extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            edit: false,
+            edit: true,
             username:  '',
             surname: '',
             phone:  '',
